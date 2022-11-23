@@ -1,0 +1,15 @@
+.NavBar{
+    color: rgb(255, 255, 255);
+    background-color: black;
+    display: flex;
+}
+
+.Brand{
+    margin-left: 0.5em;
+    font-size: 1.7em;
+}
+.Carrito{
+    display: flex;
+    margin-top: 1.5em;
+    margin-left: 44em;
+}

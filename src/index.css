@@ -1,0 +1,31 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  background-color: rgb(71, 71, 71);
+  margin: 0;
+  padding: 0;
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+h1{
+  font-size: 1.5em;
+  padding-top: 0;
+  margin-left: 0;  
+}
+ul {
+  margin-top: 1.5em;
+  display: flex;
+  list-style-type: none;
+}
+ul li{
+  margin-left: 1em;
+  padding: 2px;
+}
+a{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+a:hover{
+  color: rgb(220, 220, 220);
+}
