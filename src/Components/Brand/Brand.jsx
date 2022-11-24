@@ -2,8 +2,9 @@ import React from 'react'
 import "../Styles.css"
 
 const Brand = () => {
+
     return (
-        <h1 className='Brand'>ElQuincho</h1>
+        <h1 className='Brand' greetings="bienvenido">ElQuincho</h1>
     )
 }
 

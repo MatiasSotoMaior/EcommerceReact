@@ -2,14 +2,16 @@
     color: rgb(255, 255, 255);
     background-color: black;
     display: flex;
+    width: 89em;
 }
-
 .Brand{
     margin-left: 0.5em;
     font-size: 1.7em;
 }
 .Carrito{
-    display: flex;
-    margin-top: 1.5em;
-    margin-left: 44em;
+    position: relative;
+    top: 1.5em; left: 47em;
+}
+.Header{
+    text-align: center;
 }
