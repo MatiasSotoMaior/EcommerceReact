@@ -1,7 +1,11 @@
 import "./ItemDetail.css"
 import React from 'react'
+import ItemCount from "../ItemCount/ItemCount"
 
 const ItemDetail = ({ products=[] }) => {
+    const onAdd = (cant)=>{
+    console.log('agregaste: ' , cant);
+    }
     return (
             <div className="Detail">
                 <div className="imgDetail">
@@ -17,9 +21,7 @@ const ItemDetail = ({ products=[] }) => {
                         <h3>Detalles</h3>
                         {products.IBU ? <p>IBU:{products.IBU}</p>:<p>ALC:{products.ALC}%</p>}
                     </div>
-                    <h3 className="py-3">
-                        ${products.Precio}
-                    </h3>
+                    <ItemCount onAdd={onAdd} products={products}/>
                 </div>
             </div>
     )

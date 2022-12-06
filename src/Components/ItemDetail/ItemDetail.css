@@ -2,6 +2,7 @@
     margin-top: 2em;
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 .title{
     text-transform: uppercase;
