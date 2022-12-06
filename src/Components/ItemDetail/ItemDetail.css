@@ -1,0 +1,29 @@
+.Detail{
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+}
+.title{
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+.imgDetail{
+    background-color: rgb(255, 255, 255);
+    padding: 0.5em;
+    margin: 0.5em;
+    max-width: 27em;
+    max-height: 30em;
+    border-color: rgba(0, 0, 0, 0.655);
+    border-style: ridge;
+    border-radius: 1em;
+}
+.detDetail{
+    background-color: rgb(255, 255, 255);
+    padding: 0.5em;
+    margin: 0.5em;
+    max-width: 27em;
+    max-height: 30em;
+    border-color: rgba(0, 0, 0, 0.655);
+    border-style: ridge;
+    border-radius: 1em;
+}

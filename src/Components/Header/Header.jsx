@@ -1,12 +1,11 @@
 import React from 'react'
 import Brand from '../Brand/Brand'
-import "../Styles.css"
+import "./Header.css"
 
 const Header = (props) => {
     return (
         <div className='Header'>
-        <h2>{props.greetings}</h2>
-        <Brand/>
+        <h2 className='onStock'>{props.greetings}</h2>
         </div>
     )
 }

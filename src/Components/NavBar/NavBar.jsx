@@ -1,20 +1,54 @@
 import React from 'react'
-import "../Styles.css"
+import "./Navbar.css"
 import Brand from '../Brand/Brand'
-import Cart from '../Cart/Cart'
+import CartWidget from '../CartWidget/CartWidget'
+import { Navbar, Container, Nav, NavDropdown, Button, Form, NavLink } from "react-bootstrap"
+import {Link} from 'react-router-dom'
 
-function NavBar({link}) {
+function NavBar({ }) {
     return (
-        <div className='NavBar'>
-            <a href='#'><Brand/></a>
-            <ul>
-                <li><a onClick={link} key={"nosotros"} href="#">Nosotros</a></li>
-                <li><a onClick={link} key={"packs"} href="#">Packs</a></li>
-                <li><a onClick={link} key={"presupuesto"} href="#">Arma tu presupuesto</a></li>
-                <li><a onClick={link} key={"contacto"} href="#">Contactanos</a></li>
-            </ul>
-            <Cart/>
-        </div>
+        <Navbar className='sticky-top' bg="light" expand="lg">
+            <Container fluid>
+                <Link to="/"><Brand /></Link>
+                <Navbar.Toggle aria-controls="navbarScroll" />
+                <Navbar.Collapse id="navbarScroll">
+                    <Nav
+                        className="me-auto my-2 my-lg-0"
+                        style={{ maxHeight: '100px' }}
+                        navbarScroll
+                    >
+                        <Nav.Link href="#action2">NUESTROS PRODUCTOS</Nav.Link>
+                        <NavDropdown title="CATEGORIAS" id="navbarScrollingDropdown">
+                            <Link to='/category/Cerveza'>
+                                CERVEZAS
+                            </Link>
+                            <br></br>
+                            <Link to='/category/BebidaBlanca'>
+                                BEBIDA BLANCA
+                            </Link>
+                            {/* <NavDropdown.Item href="#action5">
+                                LICORES
+                            </NavDropdown.Item> */}
+                        </NavDropdown>
+                        <Nav.Link href="#">
+                            ¡PONTE EN CONTACTO!
+                        </Nav.Link>
+                    </Nav>
+                    <Form className="d-flex">
+                        <Form.Control
+                            type="search"
+                            placeholder="Search"
+                            className="me-2"
+                            aria-label="Search"
+                        />
+                        <Button variant="outline-success">Search</Button>
+                    </Form>
+                    <Link to="cart">
+                    <CartWidget />
+                    </Link>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
     )
 }
 

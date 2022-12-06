@@ -1,10 +1,10 @@
 import React from 'react'
-import "../Styles.css"
+import "./Brand.css"
 
 const Brand = () => {
 
     return (
-        <h1 className='Brand' greetings="bienvenido">ElQuincho</h1>
+        <h1 className='Brand'>BEBIDASMATI</h1>
     )
 }
 
