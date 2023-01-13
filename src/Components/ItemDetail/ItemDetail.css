@@ -28,3 +28,7 @@
     border-style: ridge;
     border-radius: 1em;
 }
+.goToCart{
+    display: flex;
+    flex-direction: column;
+}

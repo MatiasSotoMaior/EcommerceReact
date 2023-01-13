@@ -1,0 +1,30 @@
+.itemCart{
+    border-radius: 1em;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    width: 30em;
+    margin: 4px;
+
+}
+.cartImg{
+    border-radius: 1em;
+    max-width: 17em;
+    max-height: 10em; 
+    margin-right: 2em;
+}
+
+.detCont{
+    width: 12em;
+}
+
+.deleteBtnCont{
+    background: rgba(255, 0, 0, 0.484);
+    margin-left: 4.7em;
+    border-radius: 1em;
+}
+.deleteBtn{
+    border: transparent;
+    background: transparent;
+    padding-bottom: 4em;
+    padding-top: 4em;
+}

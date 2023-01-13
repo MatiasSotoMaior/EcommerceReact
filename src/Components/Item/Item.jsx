@@ -1,10 +1,10 @@
 import React from 'react'
 import { Button, Card } from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { useContext } from "react"
+import { CartContext } from "../../context/CartContext"
 
 const Item = ({ info }) => {
-
-    console.log(info.Name)
     return (
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src={info.Img} />
@@ -13,8 +13,8 @@ const Item = ({ info }) => {
                 <Card.Text>
                     {info.Tipo}
                 </Card.Text>
-                <Link to={`/detail/${info.ID}`}>
-                <Button variant="primary">info</Button>
+                <Link to={`/detail/${info.id}`}>
+                    <Button variant="primary">info</Button>
                 </Link>
             </Card.Body>
         </Card>

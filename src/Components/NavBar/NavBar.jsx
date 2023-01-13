@@ -17,22 +17,22 @@ function NavBar({ }) {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <Nav.Link href="#action2">NUESTROS PRODUCTOS</Nav.Link>
+                        <Link className='pt-2' to="/">NUESTROS PRODUCTOS</Link>
                         <NavDropdown title="CATEGORIAS" id="navbarScrollingDropdown">
-                            <Link to='/category/Cerveza'>
+                            <Link className='ps-2' to='/category/Cerveza'>
                                 CERVEZAS
                             </Link>
                             <br></br>
-                            <Link to='/category/BebidaBlanca'>
+                            <Link className='ps-2' to='/category/BebidaBlanca'>
                                 BEBIDA BLANCA
                             </Link>
                             {/* <NavDropdown.Item href="#action5">
                                 LICORES
                             </NavDropdown.Item> */}
                         </NavDropdown>
-                        <Nav.Link href="#">
+                        <Link className='pt-2' href="#">
                             ¡PONTE EN CONTACTO!
-                        </Nav.Link>
+                        </Link>
                     </Nav>
                     <Form className="d-flex">
                         <Form.Control
