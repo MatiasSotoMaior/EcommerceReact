@@ -6,7 +6,7 @@ export const useCartContext = () => useContext(CartContext)
 function CartProvider({ children }) {
     const [cart, setCart] = useState([])
 
-    const onBuyClick = () => {
+    const onBuyClickOk = () => {
         Swal.fire({
             position: 'center',
             icon: 'success',
@@ -15,6 +15,14 @@ function CartProvider({ children }) {
             timer: 1500
         })
     }
+
+    const onBuyClickNotOk = () => {
+        Swal.fire('Inicie sesion para continuar')
+    }
+
+    const signIn = false
+
+    const handleBuyClick = () => {signIn === true ? onBuyClickOk() : onBuyClickNotOk()}
 
     const clearCart = () => { setCart([]) }
 
@@ -45,7 +53,7 @@ function CartProvider({ children }) {
             addProduct,
             totalPrice,
             totalProducts,
-            onBuyClick,
+            handleBuyClick,
             cart
         }}>
             {children}

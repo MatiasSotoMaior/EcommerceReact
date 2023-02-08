@@ -1,0 +1,9 @@
+.spin{
+    width: 6em;
+    height: 6em;
+}
+.spinCont{
+    display: flex;
+    justify-content: center;
+    margin-top: 8em;
+}
