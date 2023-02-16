@@ -6,7 +6,7 @@ import ItemCart from '../ItemCart/ItemCart';
 
 const Cart = () => {
 
-    const { cart, totalPrice, clearCart, handleBuyClick } = useCartContext();
+    const { cart, totalPrice, clearCart, handleBuyClick, signIn } = useCartContext();
 
     if (cart.length === 0) {
         return (
@@ -23,9 +23,15 @@ const Cart = () => {
                 cart.map(product => <div className='ItemCartC' key={product.id}><ItemCart product={product} /></div>)
             }
             <div className='TotalBuy pt-3'>
-                <p className='fs-5 pt-2 me-5'>TOTAL: ${totalPrice()}</p>
-                <button className='btn btn-outline-danger mx-2' onClick={() => { clearCart() }}>Vaciar</button>
-                <button className='btn btn-outline-success' onClick={() => {handleBuyClick(), clearCart() }}>Comprar</button>
+                <p className='fs-5 me-5'>TOTAL: ${totalPrice()}</p>
+                <div>
+                    <button className='btn btn-outline-danger mx-2' onClick={() => { clearCart() }}>Vaciar</button>
+                </div>
+                <Link to='/CreateOrder'>
+                    <button className='btn btn-outline-success' onClick={() => { handleBuyClick() }}>
+                        Comprar
+                    </button>
+                </Link>
             </div>
         </div>
     )

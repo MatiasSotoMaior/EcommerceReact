@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
-export const CartContext = React.createContext([])
 
+export const CartContext = React.createContext([])
 export const useCartContext = () => useContext(CartContext)
 
 function CartProvider({ children }) {
@@ -17,12 +17,17 @@ function CartProvider({ children }) {
     }
 
     const onBuyClickNotOk = () => {
-        Swal.fire('Inicie sesion para continuar')
+        return (
+            <>
+                <div id="liveAlertPlaceholder"></div>
+                <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button>
+            </>
+        )
     }
 
     const signIn = false
 
-    const handleBuyClick = () => {signIn === true ? onBuyClickOk() : onBuyClickNotOk()}
+    const handleBuyClick = () => { signIn === true ? onBuyClickOk : onBuyClickNotOk }
 
     const clearCart = () => { setCart([]) }
 
@@ -53,7 +58,9 @@ function CartProvider({ children }) {
             addProduct,
             totalPrice,
             totalProducts,
+            onBuyClickOk,
             handleBuyClick,
+            signIn,
             cart
         }}>
             {children}

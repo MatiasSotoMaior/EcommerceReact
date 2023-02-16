@@ -8,6 +8,7 @@ import ItemListContainer from './Components/Pages/ItemListContainer/ItemListCont
 import ItemDetailContainer from './Components/Pages/ItemDetailContainer/ItemDetailContainer';
 import CartContainer from './Components/Pages/CartContainer/CartContainer';
 import CartProvider from './context/CartContext';
+import CreateOrder from './Components/CreateOrder/CreateOrder';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/detail/:productID' element={<ItemDetailContainer />} />
           <Route path='/cart' element={<CartContainer />} />
           <Route path='*' element={<Navigate to='/' />} />
+          <Route path='/CreateOrder' element={<CreateOrder/>}/>
         </Routes>
       </CartProvider>
     </BrowserRouter>

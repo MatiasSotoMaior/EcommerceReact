@@ -2,7 +2,7 @@ import React from 'react'
 import "./Navbar.css"
 import Brand from '../Brand/Brand'
 import CartWidget from '../CartWidget/CartWidget'
-import { Navbar, Container, Nav, NavDropdown, Button, Form, NavLink } from "react-bootstrap"
+import { Navbar, Container, Nav, NavDropdown, Button, Form} from "react-bootstrap"
 import {Link} from 'react-router-dom'
 
 function NavBar({ }) {
@@ -34,16 +34,7 @@ function NavBar({ }) {
                             ¡PONTE EN CONTACTO!
                         </Link>
                     </Nav>
-                    <Form className="d-flex">
-                        <Form.Control
-                            type="search"
-                            placeholder="Search"
-                            className="me-2"
-                            aria-label="Search"
-                        />
-                        <Button variant="outline-success">Search</Button>
-                    </Form>
-                    <Link to="cart">
+                    <Link className='me-3' to="cart">
                     <CartWidget />
                     </Link>
                 </Navbar.Collapse>
