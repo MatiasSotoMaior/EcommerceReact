@@ -44,7 +44,7 @@ const CreateOrder = () => {
                     <div className='orderIcon'>
                         <i className="fa-solid fa-money-check"></i>
                     </div>
-                    <div className='d-flex'>
+                    <div className='orderCont d-flex'>
                         <form className='form' onChange={handleInputChange}>
                             <label htmlFor="nombre">Nombre:</label>
                             <input type="text" id="nombre" name="nombre" />

@@ -2,10 +2,12 @@ import "./ItemList.css"
 import React from 'react'
 import Item from '../Item/Item'
 
-const ItemList = ({products=[]}) => {
+const ItemList = ({ products = [] }) => {
     return (
-        <div className='itemList'>
-        {products.map(prod =>  <Item key={prod.id} info={prod}/>)}
+        <div className="container">
+            <div className='itemList row justify-content-around'>
+                {products.map(prod => <Item key={prod.id} info={prod} />)}
+            </div>
         </div>
     )
 }

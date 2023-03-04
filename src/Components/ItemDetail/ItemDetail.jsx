@@ -18,7 +18,7 @@ const ItemDetail = ({ products = [] }) => {
     return (
         <div className="Detail">
             <div className="imgDetail">
-                <img src={products.Img} alt="" />
+                <img className="img" src={products.Img} alt="" />
             </div>
             <div className="detDetail">
                 <h2 className="title text-center">{products.Name}</h2>

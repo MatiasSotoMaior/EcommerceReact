@@ -1,14 +1,22 @@
-.Detail{
+.Detail {
     margin-top: 2em;
     display: flex;
     justify-content: center;
     text-align: center;
 }
-.title{
+
+@media screen and (max-width: 800px) {
+    .Detail {
+        flex-direction: column;
+    }
+}
+
+.title {
     text-transform: uppercase;
     margin-bottom: 1em;
 }
-.imgDetail{
+
+.imgDetail {
     background-color: rgb(255, 255, 255);
     padding: 0.5em;
     margin: 0.5em;
@@ -18,7 +26,13 @@
     border-style: ridge;
     border-radius: 1em;
 }
-.detDetail{
+@media screen and (max-width: 800px) {
+    .img {
+        width: 23.6em;
+    }
+}
+
+.detDetail {
     background-color: rgb(255, 255, 255);
     padding: 0.5em;
     margin: 0.5em;
@@ -28,7 +42,8 @@
     border-style: ridge;
     border-radius: 1em;
 }
-.goToCart{
+
+.goToCart {
     display: flex;
     flex-direction: column;
 }

@@ -4,7 +4,11 @@
     display: flex;
     width: 30em;
     margin: 4px;
-
+}
+@media screen and (max-width: 800px) {
+    .itemCart {
+        width: 22.8em;
+    }
 }
 .cartImg{
     border-radius: 1em;
@@ -21,6 +25,11 @@
     background: rgba(255, 0, 0, 0.484);
     margin-left: 4.7em;
     border-radius: 1em;
+}
+@media screen and (max-width: 800px) {
+    .deleteBtnCont {
+        margin-left: -2.5em;
+    }
 }
 .deleteBtn{
     border: transparent;
