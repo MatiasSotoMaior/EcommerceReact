@@ -1,23 +1,31 @@
 import React, { useState } from 'react'
-import './CreateOrder.css'
 import { useCartContext } from '../../context/CartContext'
-import { getFirestore, collection, addDoc, doc, updateDoc } from 'firebase/firestore'
+import { getFirestore, collection, addDoc} from 'firebase/firestore'
+import { useNavigate } from 'react-router-dom';
+import './CreateOrder.css'
 
 const CreateOrder = () => {
+
+    const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         nombre: "",
         email: "",
         direccion: "",
         phone: "",
     });
+
     const { cart, totalPrice, clearCart, onBuyClickOk } = useCartContext();
+
     const handleInputChange = (e) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value
         });
     }
+
     const handleFinishPurchase = () => {
+
         if (formData.nombre == "" || formData.email == "" || formData.direccion == "" || formData.phone == "") {
             Swal.fire({
                 icon: 'error',
@@ -32,16 +40,25 @@ const CreateOrder = () => {
             const db = getFirestore()
             const queryCollection = collection(db, 'orders')
             addDoc(queryCollection, order)
-                .finally(() => { clearCart(), onBuyClickOk() })
+                .then(() => { clearCart(), onBuyClickOk() })
+                .then(() => {
+                    setFormData({
+                        nombre: "",
+                        email: "",
+                        direccion: "",
+                        phone: "",
+                    })
+                })
+                .finally(() => { redirectToHome() })
         }
-
-        // const idUpdated = order.items.map(prod => prod.id);
-        // const queryDoc = doc(db, 'Stock', idUpdated)
-        // updateDoc(queryDoc, {
-        //     stock : 5
-        // })
-
     }
+
+    const redirectToHome = () => {
+        setTimeout(() => {
+            navigate("/");
+        }, 4000);
+    }
+
     return (
         <>
             <div className='order'>
@@ -51,13 +68,13 @@ const CreateOrder = () => {
                 <div className='orderCont d-flex'>
                     <form className='form' onChange={handleInputChange}>
                         <label htmlFor="nombre">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre" />
+                        <input type="text" id="nombre" name="nombre" value={formData.nombre} />
                         <label htmlFor="phone">Celular:</label>
-                        <input type="phone" id="phone" name="phone" />
+                        <input type="phone" id="phone" name="phone" value={formData.phone} />
                         <label htmlFor="email">Email:</label>
-                        <input type="email" id="email" name="email" />
+                        <input type="email" id="email" name="email" value={formData.email} />
                         <label htmlFor="direccion">Dirección:</label>
-                        <input type="text" id="direccion" name="direccion" />
+                        <input type="text" id="direccion" name="direccion" value={formData.direccion} />
                     </form>
                     <div className='mt-3'>
                         {
